@@ -21,7 +21,7 @@ jobs:
       - name: terraform fmt
         uses: dflook/terraform-fmt@v1
         with:
-          path: my-terraform-config
+          path: /
       - name: Lint Terraform
         uses: actionshub/terraform-lint@main
 
