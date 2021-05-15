@@ -31,6 +31,11 @@ resource "aws_route_table" "demo-route-table" {
   }
 }
 
+resource "aws_api_gateway_domain_name" "bad_example" {
+  security_policy = "TLS_1_0"
+}
+
+
 resource "aws_route_table_association" "demo-association-1" {
   route_table_id = aws_route_table.demo-route-table.id
   subnet_id      = aws_subnet.subnet-no-1.id
