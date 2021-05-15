@@ -18,6 +18,8 @@ jobs:
           github_token: ${{ github.token }}
       - name: tf security scan
         uses: triat/terraform-security-scan@v2.0.2
+        with:
+          tfsec_output_format: JSON
       - name: terraform fmt
         uses: dflook/terraform-fmt@v1
         with:
