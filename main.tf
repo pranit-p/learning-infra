@@ -4,5 +4,5 @@ provider "aws" {
 }
 
 module "codebuild_module" {
-  source = "./module/codebuild"
+  source = "./module/codedeploy"
 }
