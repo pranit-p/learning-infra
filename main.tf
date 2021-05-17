@@ -3,30 +3,27 @@ provider "aws" {
 }
 
 
-resource "aws_s3_bucket" "logging_bucket" {
-    bucket = "codebuild_persnal_logging_bucket"
-    acl    = "log-delivery-write"
+resource "aws_s3_bucket_public_access_block" "example" {
+  bucket = aws_s3_bucket.log_bucket.id
+
+  block_public_acls   = true
+  block_public_policy = true
 }
 
-resource "aws_s3_bucket" "codebuild_bucket" {
-  bucket = "codebuild_bucket"
+
+resource "aws_s3_bucket" "log_bucket" {
+  bucket = "my-tf-log-bucket-demo1"
+  acl    = "log-delivery-write"
+
+}
+
+resource "aws_s3_bucket" "b" {
+  bucket = "my-tf-test-bucket2123"
   acl    = "private"
-  versioning {
-    enabled = true
-  }
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm     = "AES256"
-      }
-    }
-  }
+
   logging {
-    target_bucket = aws_s3_bucket.logging_bucket.id
+    target_bucket = aws_s3_bucket.log_bucket.id
+    target_prefix = "log/"
   }
 }
 
