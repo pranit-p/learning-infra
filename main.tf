@@ -3,12 +3,12 @@ provider "aws" {
 }
 
 
-resource "aws_s3_bucket" "logging-bucket" {
-    bucket = "codebuild-persnal-logging_bucket"
+resource "aws_s3_bucket" "logging_bucket" {
+    bucket = "codebuild_persnal_logging_bucket"
     acl    = "log-delivery-write"
 }
 
-resource "aws_s3_bucket" "codebuild-bucket" {
+resource "aws_s3_bucket" "codebuild_bucket" {
   bucket = "codebuild_bucket"
   acl    = "private"
   versioning {
@@ -26,7 +26,7 @@ resource "aws_s3_bucket" "codebuild-bucket" {
     }
   }
   logging {
-    target_bucket = aws_s3_bucket.logging-bucket.id
+    target_bucket = aws_s3_bucket.logging_bucket.id
   }
 }
 
