@@ -1,0 +1,26 @@
+# this file is used for build the image file from the source repository
+# following is just demo syntax for buildspec.yml file
+# this file is very important at the time code build this file should be present in project root directory
+
+version: 0.2          # version of yaml file or build state
+phases:               # we have four phases in that file this phases are default so you need to write your logic in it
+  install:            # this is first phase  we install whatever we want
+    runtime-versions:       # in this step we declare what we required for run our images
+      terraform: 0.14.0
+    commands:           # in this block we run command
+      - echo "installing something wait "
+      - terraform init
+  pre_build:          #  this is second step in this phase we run command before build
+    commands:
+      - echo "we are in pre build phase"
+      - terraform plan
+  build:                # in this phase actual build happen so in this we run all command required for build
+    commands:
+      - echo "we are in build block"
+      - terraform apply
+      - echo "In this phase we run some tests"
+  post_build:           # this is last step  in that phase we run ending command like create build zip file like that
+    commands:
+      - echo "we are in post build phase"
+      - terraform destroy
+
