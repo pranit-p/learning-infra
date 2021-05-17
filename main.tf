@@ -2,6 +2,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
+
+resource "aws_s3_bucket" "logging-bucket" {
+    bucket = "codebuild-persnal-logging_bucket"
+    acl    = "log-delivery-write"
+}
+
 resource "aws_s3_bucket" "codebuild-bucket" {
   bucket = "codebuild_bucket"
   acl    = "private"
@@ -20,7 +26,7 @@ resource "aws_s3_bucket" "codebuild-bucket" {
     }
   }
   logging {
-    target_bucket = "logging_bucket"
+    target_bucket = aws_s3_bucket.logging-bucket.id
   }
 }
 
