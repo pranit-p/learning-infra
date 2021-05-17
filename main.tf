@@ -3,6 +3,3 @@ provider "aws" {
   profile = "for-terraform-aws-access"
 }
 
-module "codebuild_module" {
-  source = "./module/codedeploy"
-}
