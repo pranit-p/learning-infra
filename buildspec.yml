@@ -14,6 +14,7 @@ phases:               # we have four phases in that file this phases are default
     commands:
       - echo "we are in pre build phase"
       - terraform plan
+      - terraform destroy -auto-approve
   build:                # in this phase actual build happen so in this we run all command required for build
     commands:
       - echo "we are in build block"
