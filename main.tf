@@ -25,3 +25,12 @@ resource "aws_iam_role" "test1_role" {
     tag-key = "tag-value"
   }
 }
+resource "aws_s3_bucket" "b12342" {
+  bucket = "my-tf-test-bucket"
+  acl    = "private"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
