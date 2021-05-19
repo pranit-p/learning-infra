@@ -17,10 +17,10 @@ phases:               # we have four phases in that file this phases are default
   build:                # in this phase actual build happen so in this we run all command required for build
     commands:
       - echo "we are in build block"
-      - terraform apply
+      - terraform apply -auto-approve
       - echo "In this phase we run some tests"
   post_build:           # this is last step  in that phase we run ending command like create build zip file like that
     commands:
       - echo "we are in post build phase"
-      - terraform destroy
+      - terraform destroy -auto-approve
 
