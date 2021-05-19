@@ -2,30 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-<<<<<<< HEAD
-//resource "aws_s3_bucket" "codebuild-bucket" {
-//  bucket = "codebuild_bucket"
-//  acl    = "private"
-//  versioning {
-//    enabled = true
-//  }
-//  tags = {
-//    Name        = "My bucket"
-//    Environment = "Dev"
-//  }
-//  server_side_encryption_configuration {
-//    rule {
-//      apply_server_side_encryption_by_default {
-//        sse_algorithm     = "AES256"
-//      }
-//    }
-//  }
-//  logging {
-//    target_bucket = "logging_bucket"
-//  }
-//}
-//
-=======
 resource "aws_iam_role" "test1_role" {
   name = "test_role"
 
@@ -49,4 +25,3 @@ resource "aws_iam_role" "test1_role" {
     tag-key = "tag-value"
   }
 }
->>>>>>> 645ba3f44e04814f885304142d58220f3de1fb22
