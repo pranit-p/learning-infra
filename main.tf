@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_iam_role" "test1_role" {
+resource "aws_iam_role" "test1212_role" {
   name = "test_role"
 
   # Terraform's "jsonencode" function converts a
