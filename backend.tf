@@ -1,8 +1,7 @@
 terraform {
   backend "s3" {
-    bucket         = "persnal-terraform-backend"
-    key = "./terraform.tfstate"
+    bucket  = "persnal-backed-bucket-for-all-repo"
+    key = "terraform/demo"
     region = "us-east-1"
   }
 }
-
