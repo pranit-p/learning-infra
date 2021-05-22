@@ -22,5 +22,5 @@ phases:               # we have four phases in that file this phases are default
   post_build:           # this is last step  in that phase we run ending command like create build zip file like that
     commands:
       - echo "we are in post build phase"
-      - terraform destroy -auto-approve
+                        #- terraform destroy -auto-approve
 
