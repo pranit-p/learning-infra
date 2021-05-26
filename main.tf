@@ -25,3 +25,24 @@ resource "aws_iam_role" "test1212_role" {
     tag-key = "tag-value"
   }
 }
+
+
+
+resource "aws_iam_role" "demo-for-codebuild-test-example" {
+  name = "example_codebuild_test"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "codebuild.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
