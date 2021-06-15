@@ -2,8 +2,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_iam_role" "test1212_role" {
-  name = "test_role"
+resource "aws_iam_role" "test1212_role_test" {
+  name = "test_role_test"
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
@@ -28,8 +28,8 @@ resource "aws_iam_role" "test1212_role" {
 
 
 
-resource "aws_iam_role" "demo-for-codebuild-test-example" {
-  name = "example_codebuild_test"
+resource "aws_iam_role" "demo-for-codebuild-test-example_test" {
+  name = "example_codebuild_test_test"
 
   assume_role_policy = <<EOF
 {
