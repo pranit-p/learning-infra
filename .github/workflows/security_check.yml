@@ -1,6 +1,6 @@
 # security check action script
 
-name: terraform-security-check
+name: Cycode
 on: [pull_request,push]
 
 jobs:
