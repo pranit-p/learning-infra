@@ -20,7 +20,6 @@ jobs:
         uses: triat/terraform-security-scan@v2.0.2
         with:
           tfsec_output_format: JSON
-          tfsec_exclude: AWS008
 
 
 
