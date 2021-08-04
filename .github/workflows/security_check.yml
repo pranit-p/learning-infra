@@ -1,7 +1,7 @@
 # security check action script
 
 name: terraform-security-check
-on: [pull_request,push]
+on: [pull_request, push]
 
 jobs:
   tfsec:
@@ -21,6 +21,3 @@ jobs:
         with:
           tfsec_output_format: JSON
           tfsec_exclude: AWS008,AWS009
-
-
-
