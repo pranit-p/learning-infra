@@ -13,6 +13,10 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@master
 
+      - name: Pull Request Commenter
+        uses: aquasecurity/tfsec-pr-commenter-action@v0.1.6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
   
 
       - name: Terraform security scan
