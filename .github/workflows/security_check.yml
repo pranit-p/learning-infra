@@ -15,7 +15,7 @@ jobs:
 
       - name: Pull Request Commenter
         if: ${{ github.event_name == 'pull_request' }}
-        uses: aquasecurity/tfsec-pr-commenter-action@main
+        uses: aquasecurity/tfsec-pr-commenter-action@0.1.7
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
