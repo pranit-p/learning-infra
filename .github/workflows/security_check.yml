@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Pull Request Commenter
-        uses: aquasecurity/tfsec-pr-commenter-action@v0.1.6
+        uses: aquasecurity/tfsec-pr-commenter-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
   
