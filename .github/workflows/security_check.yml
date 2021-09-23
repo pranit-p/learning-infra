@@ -20,7 +20,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Terraform security scan
-        uses: triat/terraform-security-scan@main
+        uses: triat/terraform-security-scan@v3.0.0
         with :
           tfsec_output_format: JSON
           tfsec_exclude: "AWS008,AWS009"
