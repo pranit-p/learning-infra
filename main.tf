@@ -33,3 +33,17 @@ resource "aws_s3_bucket_public_access_block" "good_example" {
   restrict_public_buckets = true
 }
 
+#tfsec:ignore:AWS095 - No need of CMK
+resource "aws_secretsmanager_secret" "pagerduty_integration_url" {
+  name = "pagerduty_integration_url"
+}
+
+
+#tfsec:ignore:AWS095 - No need of CMK
+resource "aws_secretsmanager_secret_version" "pagerduty_integration_url" {
+  secret_id     = aws_secretsmanager_secret.pagerduty_integration_url.id
+  secret_string = "invalid_value"
+  lifecycle {
+    ignore_changes = [secret_string]
+  }
+}
