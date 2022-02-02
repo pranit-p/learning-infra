@@ -15,11 +15,13 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@master
-      - name: Pull Request Commenter
-          if: ${{ github.event_name == 'pull_request' }}
-          uses: aquasecurity/tfsec-pr-commenter-action@main
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: tfsec
+        uses: aquasecurity/tfsec-pr-commenter-action@v1.0.2
+        with:
+          github_token: ${{ github.token }}
+
+
       - name: Terraform security scan
         uses: aquasecurity/tfsec-action@v1.0.0
         env:
